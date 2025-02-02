@@ -1,6 +1,11 @@
-// Simple script for button animation
-document.querySelectorAll('.cta-button').forEach(button => {
-  button.addEventListener('click', () => {
-    alert('You will be redirected to the registration page!');
+// Smooth scrolling for anchor links
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
   });
 });
